@@ -1,0 +1,25 @@
+diff --git a/Makefile b/Makefile
+index ebb8732..a2d8d30 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,6 +1,6 @@
+ CC = gcc
+ CFLAGS = -Wall -Wextra -std=c99
+-LDFLAGS = -lm
++LDFLAGS = -lm -lws2_32
+ OBJFILES = techmic.o techmic_ops.o techmic_fileio.o
+ 
+ all: emu as
+diff --git a/techmic_fileio.c b//techmic_fileio.c
+index 5830b4e..ce9a72f 100644
+--- a/techmic_fileio.c
++++ b/techmic_fileio.c
+@@ -1,7 +1,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <arpa/inet.h>
++#include <winsock2.h>
+ 
+ #include "techmic_fileio.h"
+ 
